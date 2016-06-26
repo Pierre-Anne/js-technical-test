@@ -12,11 +12,17 @@
   border-left: solid 4px #D2DCE5;
 }
 
+.userHidden {
+  margin-left: -90%;
+  width: 100%
+}
+
 .user {
   padding: 5px;
   margin: 10px;
   background-color: #AFCBE5;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .header {

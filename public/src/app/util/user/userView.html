@@ -1,0 +1,5 @@
+<div ng-controller="UserController as vm"  ng-class="{'userHidden' : vm.isHidden(user.id)}">
+    <div ng-click="vm.addHiddenUser(user.id)" class="user">
+        <span>{{user.login}}</span>
+    </div>
+</div>

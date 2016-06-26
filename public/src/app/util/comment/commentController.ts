@@ -1,6 +1,6 @@
 'use strict';
 /**
- * IssueController is used as controller of the issueView
+ * commentController is used as controller of the commentView
  */
 class CommentController {
 

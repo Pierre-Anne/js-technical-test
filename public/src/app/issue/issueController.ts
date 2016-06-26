@@ -17,13 +17,13 @@ class IssueController {
         headerService.setHeaderTitle(this.issue.title);
     }
 
-    public addHiddenUser(id: number): void {
-        if(!this.hiddenService.isHiddenUser(id)){
-            this.hiddenService.addHiddenService(id);
-        } else {
-            this.hiddenService.removeHiddenUser(id);
-        }
-    }
+    //public addHiddenUser(id: number): void {
+    //    if(!this.hiddenService.isHiddenUser(id)){
+    //        this.hiddenService.addHiddenService(id);
+    //    } else {
+    //        this.hiddenService.removeHiddenUser(id);
+    //    }
+    //}
 
 }
 
