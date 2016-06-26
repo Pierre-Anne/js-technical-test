@@ -1,4 +1,26 @@
 .comment {
   padding: 5px;
-  margin-top: 10px;
+  margin: 10px;
+  white-space: pre-line;
+  background-color: #F3FDFF;
+  border-radius: 10px;
+}
+
+.issue {
+  background-color: #EEF3F6;
+  border-left: solid 4px #D2DCE5;
+}
+
+.user {
+  padding: 5px;
+  margin: 10px;
+  background-color: #AFCBE5;
+  border-radius: 10px;
+}
+
+.header {
+  background-color: #313B44;
+  height: 30px;
+  width: 100%;
+  color: #9DA6AE;
 }

@@ -21,6 +21,9 @@
 </head>
 <body>
 
+	<header>
+		<div ui-view="header"></div>
+	</header>
 	<div ui-view="container"></div>
 
 
@@ -36,10 +39,6 @@
 
 	<!-- inject:js -->
 	<script src="/dist/app.js"></script>
-	<!-- endinject -->
-
-	<!-- inject:sass -->
-	<link rel="stylesheet" href="styles/style.scss">
 	<!-- endinject -->
 
 </body>

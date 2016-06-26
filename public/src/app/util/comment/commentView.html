@@ -1,0 +1,11 @@
+<div ng-controller="CommentController as vm">
+    <div class="row">
+        <div ng-hide="vm.isHidden(comment.user.id)">
+            <div class="col-sm-2 col-xs-2">
+                <img src="comment.user.avatarUrl" alt="avatar">
+            </div>
+            <div class="col-sm-10 col-xs-10 comment" ng-bind="comment.body">
+            </div>
+        </div>
+    </div>
+</div>

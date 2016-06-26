@@ -12,6 +12,16 @@ jsTechnicalTestApp.config(function($locationProvider: ng.ILocationProvider,
         .state('root', {
             url: '/',
             views: {
+                'header': {
+                    templateUrl: 'src/app/header/headerView.html',
+                    controller: 'HeaderController',
+                    controllerAs: 'vm'
+                }
+            }
+        })
+        .state('root.home', {
+            url: '',
+            views: {
                 'container@': {
                     templateUrl: 'src/app/home/homeView.html',
                     controller: 'HomeController',
@@ -23,7 +33,7 @@ jsTechnicalTestApp.config(function($locationProvider: ng.ILocationProvider,
             url: 'issue',
             views: {
                 'container@': {
-                    templateUrl: 'src/app/issue/issueView.html',
+                    templateUrl: 'src/app/issue/IssueView.html',
                     controller: 'IssueController',
                     controllerAs: 'vm'
                 }

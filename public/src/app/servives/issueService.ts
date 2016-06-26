@@ -4,9 +4,9 @@
  */
 class IssueService {
 
-    public issueModel: any;
-    public issueCommentModel: any;
-    public issueUser: Array<any> = [];
+    public issueModel: Issue;
+    public issueCommentModel: Array<Comment> = new Array<Comment>();
+    public issueUser: Array<User> = new Array<User>();
 
 
     //static $inject = [];
@@ -18,33 +18,42 @@ class IssueService {
      * Getters and Setters
      */
 
-    public getIssue(): any {
+    public getIssue(): Issue {
         return this.issueModel;
     }
 
     public setIssue(issueModel: any): void {
-        this.issueModel = issueModel;
-        this.issueUser.push(issueModel.user);
+        this.issueModel = new Issue();
+        this.issueModel.initIssueFromWSResponse(issueModel);
+        var user: User = new User();
+        user.initUserFromWSResponse(issueModel.user);
+        this.issueUser.push(user);
     }
 
-    public getIssueComment(): any {
+    public getIssueComment(): Array<Comment> {
         return this.issueCommentModel;
     }
 
     public setIssueComment(issueCommentModel: any): void {
-        this.issueCommentModel = issueCommentModel;
+        var comments: Array<Comment> = Array<Comment>();
+        _.each(issueCommentModel, function(oneComment){
+            var comment: Comment = new Comment();
+            comment.initCommentFromWSResponse(oneComment);
+            comments.push(comment);
+        });
+        this.issueCommentModel = comments;
         this.setIssueUser();
     }
 
     public setIssueUser(): void{
-        _.each(this.issueCommentModel, function(comment: any){
+        _.each(this.issueCommentModel, function(comment: Comment){
             if(_.isUndefined(_.find(this.issueUser, {id: comment.user.id}))){
                 this.issueUser.push(comment.user);
             }
         }.bind(this));
     }
 
-    public getIssueUser(): any {
+    public getIssueUser(): Array<User> {
         return this.issueUser;
     }
 }
