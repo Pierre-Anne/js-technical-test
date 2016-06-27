@@ -4,9 +4,9 @@
  */
 class HomeController {
 
-    public issue: string = '6867';
-    public owner: string = 'nodejs';
-    public repo: string = 'node';
+    public issue: string = '';
+    public owner: string = '';
+    public repo: string = '';
 
     static $inject = ['$state', 'HttpUtilService', 'IssueService'];
 
@@ -24,6 +24,12 @@ class HomeController {
             }.bind(this));
 
         }.bind(this));
+    }
+
+    public valueExample(): void {
+        this.issue = '6867';
+        this.owner = 'nodejs';
+        this.repo = 'node';
     }
 }
 

@@ -3,32 +3,33 @@
 <form class="" id="get_issue" ng-submit="vm.getIssue()">
     <div class="col-md-4 col-md-offset-4">
 
-        <h6>Get Issue</h6>
+        <h1>Get Issue</h1>
 
         <div class="row">
-            <div class="col-sm-4 col-xs-4">
+            <div class="col-sm-12 col-xs-12">
                 <div class="">
-                    <input ng-model="vm.issue" class="" id="issue" name="issue" required>
                     <label for="issue">Your issue</label>
+                    <input ng-model="vm.issue" class="" id="issue" name="issue" required>
                 </div>
             </div>
 
-            <div class="col-sm-4 col-xs-4">
+            <div class="col-sm-12 col-xs-12">
                 <div class="">
-                    <input ng-model="vm.owner" class="" id="owner" name="owner" required>
                     <label for="owner">Your issue</label>
+                    <input ng-model="vm.owner" class="" id="owner" name="owner" required>
                 </div>
             </div>
 
-            <div class="col-sm-4 col-xs-4">
+            <div class="col-sm-12 col-xs-12">
                 <div class="">
-                    <input ng-model="vm.repo" class="" id="repo" name="repo" required>
                     <label for="repo">Your issue</label>
+                    <input ng-model="vm.repo" class="" id="repo" name="repo" required>
                 </div>
             </div>
         </div>
 
         <button type="submit" class="btn btn-default btn-large">Validate</button>
-
+        <input type="button" ng-click="vm.valueExample()" value="Example value" class="btn btn-default btn-large"/>
     </div>
+
 </form>
