@@ -17,13 +17,13 @@ class HttpUtilService {
 
 
     public requestComment(issue: string, owner: string, repo: string): any {
-        var issueUrl = this.apiUrl + '/' + owner + '/' + repo + '/issues/' +issue + '/comments';
-        return this.$http.get(issueUrl)
+        var issueUrl = this.apiUrl + '/' + owner + '/' + repo + '/issues/' + issue + '/comments';
+        return this.$http.get(issueUrl);
     }
 
     public requestIssue(issue: string, owner: string, repo: string): any {
-        var issueUrl = this.apiUrl + '/' + owner + '/' + repo + '/issues/' +issue;
-        return this.$http.get(issueUrl)
+        var issueUrl = this.apiUrl + '/' + owner + '/' + repo + '/issues/' + issue;
+        return this.$http.get(issueUrl);
     }
 
 }

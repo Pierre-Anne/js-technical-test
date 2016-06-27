@@ -1,0 +1,10 @@
+<div ng-controller="PieChartController as vm">
+    <h1>Qui parle le plus</h1>
+
+    <!--<canvas id="pie" class="chart chart-pie"-->
+            <!--chart-data="vm.getData()" chart-labels="vm.getLabels()" chart-options="{}">-->
+    <!--</canvas>-->
+
+    <div google-chart chart="{{vm.getChartData()}}" style="height:600px; width:100%;"></div>
+
+</div>

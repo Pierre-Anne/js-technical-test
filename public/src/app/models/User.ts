@@ -39,7 +39,7 @@ class User {
         this.starredUrl = user.starred_url;
         this.subscriptionsUrl = user.subscriptions_url;
         this.organizationsUrl = user.organizations_url;
-        this.reposUrl = user.repos_url
+        this.reposUrl = user.repos_url;
         this.eventsUrl = user.events_url;
         this.receivedEventsUrl = user.received_events_url;
         this.type = user.type;

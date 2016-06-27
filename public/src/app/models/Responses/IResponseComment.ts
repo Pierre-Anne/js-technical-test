@@ -8,5 +8,4 @@ interface IResponseComment {
     created_at: string;
     updated_at: string;
     body: string;
-
 }

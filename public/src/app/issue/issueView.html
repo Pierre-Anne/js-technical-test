@@ -1,9 +1,11 @@
-<div>
-    <div class="row">
+<div class="issueView">
+    <div>
         <div class="col-sm-4 col-xs-4">
             <div ng-repeat="user in vm.users">
-                <!--<span ng-click="vm.addHiddenUser(user.id)">{{user.login}}</span>-->
                 <div ng-user user="user"></div>
+            </div>
+            <div>
+                <div ng-piechart></div>
             </div>
         </div>
         <div class="col-sm-8 col-xs-8 issue">

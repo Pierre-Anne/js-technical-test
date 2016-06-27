@@ -25,7 +25,7 @@ class Comment {
         this.user = new User();
         this.user.initUserFromWSResponse(comment.user);
         this.createdAt = comment.created_at;
-        this.updatedAt= comment.updated_at;
-        this.body= comment.body;
+        this.updatedAt = comment.updated_at;
+        this.body = comment.body;
     }
 }

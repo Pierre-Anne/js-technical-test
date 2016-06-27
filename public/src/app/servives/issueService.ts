@@ -8,12 +8,6 @@ class IssueService {
     public issueCommentModel: Array<Comment> = new Array<Comment>();
     public issueUser: Array<User> = new Array<User>();
 
-
-    //static $inject = [];
-    //
-    //constructor() {
-    //}
-
     /**
      * Getters and Setters
      */
@@ -36,7 +30,7 @@ class IssueService {
 
     public setIssueComment(issueCommentModel: any): void {
         var comments: Array<Comment> = Array<Comment>();
-        _.each(issueCommentModel, function(oneComment){
+        _.each(issueCommentModel, function(oneComment: IResponseComment){
             var comment: Comment = new Comment();
             comment.initCommentFromWSResponse(oneComment);
             comments.push(comment);
@@ -45,9 +39,9 @@ class IssueService {
         this.setIssueUser();
     }
 
-    public setIssueUser(): void{
+    public setIssueUser(): void {
         _.each(this.issueCommentModel, function(comment: Comment){
-            if(_.isUndefined(_.find(this.issueUser, {id: comment.user.id}))){
+            if (_.isUndefined(_.find(this.issueUser, {id: comment.user.id}))) {
                 this.issueUser.push(comment.user);
             }
         }.bind(this));

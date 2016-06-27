@@ -1,10 +1,28 @@
 
-.comment {
-  padding: 5px;
-  margin: 10px;
-  white-space: pre-line;
-  background-color: #F3FDFF;
-  border-radius: 10px;
+.all-comment {
+  display: inline-block;
+  float: left;
+  margin-top: 10px;
+  width: 100%;
+
+  .comment {
+    padding: 5px;
+    white-space: pre-line;
+    background-color: #F3FDFF;
+    border-radius: 10px;
+    vertical-align:middle;
+    display:inline-block;
+  }
+
+  .avatar {
+    vertical-align:middle;
+    display:inline-block;
+
+    .avatar-img {
+      border-radius: 50%;
+      width: 75px;
+    }
+  }
 }
 
 .issue {
@@ -12,14 +30,15 @@
   border-left: solid 4px #D2DCE5;
 }
 
-.userHidden {
+.user-hidden {
   margin-left: -90%;
   width: 100%
 }
 
 .user {
   padding: 5px;
-  margin: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
   background-color: #AFCBE5;
   border-radius: 10px;
   cursor: pointer;

@@ -15,7 +15,7 @@ class UserController {
     }
 
     public addHiddenUser(id: number): void {
-        if(!this.hiddenService.isHiddenUser(id)){
+        if (!this.hiddenService.isHiddenUser(id)) {
             this.hiddenService.addHiddenService(id);
         } else {
             this.hiddenService.removeHiddenUser(id);

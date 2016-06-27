@@ -14,18 +14,19 @@ class HiddenService {
     /**
      * Getters and Setters
      */
-    public addHiddenService(hiddenUser: number): void{
+    public addHiddenService(hiddenUser: number): void {
         this.hiddenUsers.push(hiddenUser);
     }
 
-    public getHiddenService(): Array<number>{
+    public getHiddenService(): Array<number> {
         return this.hiddenUsers;
     }
 
     public isHiddenUser(id: number): boolean {
         var index = _.indexOf(this.hiddenUsers,  id);
-        if (index === -1) { return false }
-        else { return true }
+        var isHidden: boolean = true;
+        if (index === -1) { isHidden = false; }
+        return isHidden;
     }
 
     public removeHiddenUser(id: number): void {

@@ -14,11 +14,11 @@ class HeaderService {
     /**
      * Getters and Setters
      */
-    public setHeaderTitle(headerTitle: string): void{
+    public setHeaderTitle(headerTitle: string): void {
         this.headerTitle = headerTitle;
     }
 
-    public getHeaderTitle(): string{
+    public getHeaderTitle(): string {
         return this.headerTitle;
     }
 }

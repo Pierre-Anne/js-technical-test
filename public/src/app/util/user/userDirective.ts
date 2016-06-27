@@ -31,5 +31,4 @@ class UserDirective implements angular.IDirective {
         scope.user = scope.user;
     }
 }
-
 jsTechnicalTestApp.directive('ngUser', UserDirective.factory);
