@@ -15,6 +15,8 @@ class PieChartController {
     private getNumberWord(): void {
         var listComment: Array<Comment> = this.issueService.getIssueComment();
         this.userWords = new Array<any>();
+        var issue: Issue = this.issueService.getIssue();
+        this.addComment(issue.user, issue.body.split(' ').length);
         _.each(listComment, function(comment: Comment){
             var nbWords = comment.body.split(' ').length;
             if (nbWords > 0) {
@@ -22,18 +24,19 @@ class PieChartController {
                 if (!_.isUndefined(userWord)) {
                     userWord.word = userWord.word + nbWords;
                 } else {
-                    var newUser: any = {};
-                    newUser.id = comment.user.id;
-                    newUser.name = comment.user.login;
-                    newUser.word = nbWords;
-                    this.userWords.push(newUser);
+                    this.addComment(comment.user, nbWords);
                 }
             }
         }.bind(this));
     }
 
-
-
+    private addComment(user: User, nbWords: number): void {
+        var newUser: any = {};
+        newUser.id = user.id;
+        newUser.name = user.login;
+        newUser.word = nbWords;
+        this.userWords.push(newUser);
+    }
 
     public getData(): any {
         var data = new Array<any>();
@@ -50,21 +53,11 @@ class PieChartController {
         return data;
     }
 
-    //public getLabels(): any {
-    //    var labels = new Array<number>();
-    //    _.each(this.userWords, function(user){
-    //        if (!this.hiddenService.isHiddenUser(user.id)){
-    //            labels.push(user.name)
-    //        }
-    //    }.bind(this));
-    //    return labels;
-    //}
-
     public getChartData(): any {
         var chartData: any = {};
         chartData.type = "PieChart";
         chartData.options = {
-            'title': 'Who speak much'
+            legend: 'none'
         };
         chartData.data = {};
         chartData.data.cols = [
@@ -75,41 +68,6 @@ class PieChartController {
 
         return chartData;
     }
-
-
-    //public myChartObject = {
-    //    data: {
-    //        "cols": [
-    //            {id: "t", label: "Topping", type: "string"},
-    //            {id: "s", label: "Slices", type: "number"}
-    //        ], "rows": [
-    //            {
-    //                c: [
-    //                    {v: "Mushrooms"},
-    //                    {v: 3},
-    //                ]
-    //            }
-    //            {
-    //                c: [
-    //                    {v: "Olives"},
-    //                    {v: 31}
-    //                ]
-    //            },
-    //            {
-    //                c: [
-    //                    {v: "Zucchini"},
-    //                    {v: 1},
-    //                ]
-    //            },
-    //            {
-    //                c: [
-    //                    {v: "Pepperoni"},
-    //                    {v: 2},
-    //                ]
-    //            }
-    //        ]
-    //    }
-    //}
 }
 
 jsTechnicalTestApp.controller('PieChartController', PieChartController);

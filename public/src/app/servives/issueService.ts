@@ -8,6 +8,12 @@ class IssueService {
     public issueCommentModel: Array<Comment> = new Array<Comment>();
     public issueUser: Array<User> = new Array<User>();
 
+    public isAuthor(id: number): boolean {
+        var isAuthor = false;
+        if (id === this.issueModel.user.id) { isAuthor = true };
+        return isAuthor;
+    }
+
     /**
      * Getters and Setters
      */

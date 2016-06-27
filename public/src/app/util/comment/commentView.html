@@ -1,10 +1,11 @@
 <div ng-controller="CommentController as vm">
     <div ng-if="comment">
-        <div ng-hide="vm.isHidden(comment.user.id)" class="all-comment">
-            <div class="col-sm-2 col-xs-2 avatar">
+        <div ng-hide="vm.isHidden(comment.user.id)"
+             ng-class="vm.issueService.isAuthor(comment.user.id)? 'all-comment-author all-comment row' : 'all-comment row'">
+            <div class="col-sm-2 col-xs-12 avatar">
                 <img ng-src="{{comment.user.avatarUrl}}" class ="avatar-img" alt="avatar">
             </div>
-            <div class="col-sm-10 col-xs-10 comment" ng-bind="comment.body">
+            <div class="col-sm-10 col-xs-12 comment" ng-bind="comment.body">
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 'use strict';
 interface IResponseUser {
     login: string;
-    id: string;
+    id: number;
     avatar_url: string;
     gravatar_id: string;
     url: string;

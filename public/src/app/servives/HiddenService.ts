@@ -6,11 +6,6 @@ class HiddenService {
 
     public hiddenUsers: Array<number> = [];
 
-    //static $inject = [];
-    //
-    //constructor() {
-    //}
-
     /**
      * Getters and Setters
      */

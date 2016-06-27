@@ -5,7 +5,7 @@
 class User {
 
     public login: string;
-    public id: string;
+    public id: number;
     public avatarUrl: string;
     public gravatarId: string;
     public url: string;

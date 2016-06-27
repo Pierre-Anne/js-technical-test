@@ -4,9 +4,9 @@
  */
 class CommentController {
 
-    static $inject = ['HiddenService'];
+    static $inject = ['HiddenService', 'IssueService'];
 
-    constructor(private hiddenService: HiddenService) {
+    constructor(private hiddenService: HiddenService, private issueService: IssueService) {
 
     }
 
