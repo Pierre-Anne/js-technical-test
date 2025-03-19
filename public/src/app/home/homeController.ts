@@ -13,7 +13,9 @@ class HomeController {
     constructor(private $state: ng.ui.IStateService, private httpUtilService: HttpUtilService, private issueService: IssueService) {
 
     }
-
+    /**
+     * 
+     */
     public getIssue(): void {
         this.httpUtilService.requestIssue(this.issue, this.owner, this.repo).then(function(comments: any){
             this.issueService.setIssue(comments.data);
@@ -25,7 +27,9 @@ class HomeController {
 
         }.bind(this));
     }
-
+/**
+ * tets de commentaire 
+ */
     public valueExample(): void {
         this.issue = '6867';
         this.owner = 'nodejs';
